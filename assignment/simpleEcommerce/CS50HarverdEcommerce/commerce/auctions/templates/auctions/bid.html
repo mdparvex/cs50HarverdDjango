@@ -1,0 +1,18 @@
+{% extends "auctions/layout.html" %}
+
+{%block body%}
+<h1>Listing: {{product.productname}}</h1>
+<img src = "{{product.image.url}}">
+<p>{{product.description}}</p>
+
+{%for b in beet%}
+	<h4>${{b}}</h4>
+{%endfor%}
+
+<form action="{% url "bid" product.id %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+
+{%endblock%}

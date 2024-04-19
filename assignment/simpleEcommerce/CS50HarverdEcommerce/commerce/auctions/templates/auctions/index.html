@@ -1,0 +1,22 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Active Listings!!</h2>
+    {% for product in products %}
+    <section style="border:1px;border-style: ridge;margin:10px;padding:5px;">
+        <div>
+            <img class='iconDetails' src = "{{product.image.url}}">
+        </div>
+        <div>
+        <a href="#"%}">
+            <h4>{{product.productname}}</h2>
+        </a>
+        <h6>Price: ${{product.price}}</h6>
+        <p>Created at {{product.posted}}</p>
+        <div>
+    </section>
+    {%endfor%}
+    
+{%endblock%}
+
+    
